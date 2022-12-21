@@ -1,0 +1,1092 @@
+/*------------------------------------*\
+#FONTS
+\*------------------------------------*/
+@font-face {
+  font-family: 'inter';
+  font-weight: 400;
+  src: url('../fonts/Inter-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'inter';
+  font-weight: 700;
+  src: url('../fonts/Inter-SemiBold.woff2') format('woff2');
+}
+
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+
+:root {
+  --global-alpha-dark: #2e77e6;
+  --global-alpha: #3385ff;
+  --global-alpha-light: #4f95ff;
+
+  --global-color-transparent: #3385ffbf;
+  --global-color-x-transparent: #3385ff4c;
+
+  --global-color-neutral-xxxx-light: #f5f6fa;
+  --global-color-neutral-xxx-light: #e2e3e7;
+  --global-color-neutral-xx-light: #caccd4;
+  --global-color-neutral-x-light: #b5b6c0;
+  --global-color-neutral-light: #a0a1ad;
+  --global-color-neutral: #8b8c9a;
+  --global-color-neutral-dark: #757787;
+  --global-color-neutral-x-dark: #606274;
+  --global-color-neutral-xx-dark: #4b4c60;
+  --global-color-neutral-xxx-dark: #35374d;
+  --global-color-neutral-xxxx-dark: #20223a;
+
+  --global-baseline: 8px;
+
+  --global-whitespace-xs: calc(var(--global-baseline) / 2); /* = 4px */
+  --global-whitespace-sm: var(--global-baseline); /* = 8px */
+  --global-whitespace-md: calc(var(--global-baseline) * 2); /* = 16px */
+  --global-whitespace-lg: calc(var(--global-whitespace-sm) * 3); /* = 24px*/
+  --global-whitespace-xl: calc(var(--global-whitespace-md) * 2); /* = 32px */
+  --global-whitespace-xxl: calc(var(--global-whitespace-md) * 3); /* = 48px */
+
+  --global-border-width: 1px;
+
+  accent-color: var(--global-alpha);
+}
+
+/* CSS variables here */
+
+/*------------------------------------*\
+#GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+  font-size: 16px;
+  line-height: calc(var(--global-baseline) * 1.5);
+  font-family: 'inter', Helvetica, arial, sans-serif;
+  color: var(--global-color-neutral-xxxx-dark);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--global-color-neutral-xxxx-light);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*
+* Remove text-shadow in selection highlight:
+* https://twitter.com/miketaylr/status/12228805301
+*
+* Customize the background color to match your design.
+*/
+
+::-moz-selection {
+  background: HotPink;
+  color: white;
+  text-shadow: none;
+}
+
+::selection {
+  background: var(--global-alpha);
+  color: white;
+  text-shadow: none;
+}
+
+/*------------------------------------*\
+#Elements
+\*------------------------------------*/
+
+/*
+Elements: Images
+---
+Default markup for images to make them responsive
+*/
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: var(--global-whitespace-xxl);
+  margin: 0 0 var(--global-whitespace-lg);
+}
+
+h2 {
+  font-size: 32px;
+  line-height: calc(var(--global-baseline) * 5);
+  margin: 0 0 var(--global-whitespace-lg);
+}
+
+h3 {
+  font-size: 26px;
+  line-height: var(--global-whitespace-xl);
+  margin: 0 0 var(--global-whitespace-lg);
+}
+
+h4,
+h5,
+h6 {
+  font-size: 20px;
+  line-height: var(--global-whitespace-lg);
+  margin: 0 0 var(--global-whitespace-lg);
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+  margin: 0 0 var(--global-whitespace-lg);
+}
+
+ul,
+ol {
+  padding-left: var(--global-whitespace-lg);
+}
+
+li ul,
+li ol {
+  margin-bottom: 0;
+}
+
+blockquote {
+  font-style: normal;
+  font-size: 23px;
+  line-height: var(--global-whitespace-xl);
+  margin: 0 0 var(--global-whitespace-lg);
+}
+
+blockquote * {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+figcaption {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: var(--global-whitespace-md);
+  margin-top: var(--global-whitespace-sm);
+}
+
+input,
+label {
+  display: block;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: LightGrey;
+  margin: 0 0 var(--global-whitespace-lg);
+}
+
+a {
+  color: var(--global-alpha);
+  transition: all 0.1s ease-in-out;
+}
+
+a:visited,
+a:active {
+  color: var(--global-alpha-dark);
+}
+
+a:hover,
+a:focus {
+  color: var(--global-alpha-light);
+}
+
+/*------------------------------------*\
+#OBJECTS
+\*------------------------------------*/
+
+/*
+    Objects: Row
+    ---
+    Creates a horizontal row that stretches the viewport and adds padding around children
+*/
+
+.o-row {
+  position: relative;
+  padding: var(--global-whitespace-lg) var(--global-whitespace-lg) 0;
+}
+
+.o-row--login {
+  /* stuff here to align the card */
+  height: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* size modifiers */
+
+.o-row--lg {
+  padding-top: var(--global-whitespace-xxl);
+  padding-bottom: var(--global-whitespace-lg);
+}
+
+.o-row--xl {
+  padding-top: 72px;
+  padding-bottom: var(--global-whitespace-xxl);
+}
+
+@media (min-width: 768px) {
+  .o-row {
+    padding-left: var(--global-whitespace-xxl);
+    padding-right: var(--global-whitespace-xxl);
+  }
+}
+
+@media (min-width: 992px) {
+  .o-row--xl {
+    padding-top: 96px;
+    padding-bottom: 72px;
+  }
+}
+
+/*
+    Objects: Container
+    ---
+    Creates a horizontal container that sets de global max-width
+*/
+
+.o-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 79.5em;
+  /* 79.5 * 16px = 1272 */
+  width: 100%;
+}
+
+/*
+    Objects: section
+    ---
+    Creates vertical whitespace between adjacent sections inside a row
+*/
+
+.o-section {
+  position: relative;
+}
+
+.o-section + .o-section {
+  padding-top: var(--global-whitespace-lg);
+}
+
+@media (min-width: 768px) {
+  .o-section--lg + .o-section--lg,
+  .o-section--xl + .o-section--xl {
+    padding-top: var(--global-whitespace-xxl);
+  }
+}
+
+@media (min-width: 992px) {
+  .o-section--xl + .o-section--xl {
+    padding-top: 72px;
+  }
+}
+
+/*
+    Objects: Layout
+    ---
+    The layout object provides us with a column-style layout system. This object
+    contains the basic structural elements, but classes should be complemented
+    with width utilities
+*/
+
+.o-layout {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.o-layout__item {
+  width: 100%;
+}
+
+/* gutter modifiers, these affect o-layout__item too */
+
+.o-layout--gutter {
+  margin: 0 -12px;
+}
+
+.o-layout--gutter > .o-layout__item {
+  padding: 0 12px;
+}
+
+.o-layout--gutter-sm {
+  margin: 0 -6px;
+}
+
+.o-layout--gutter-sm > .o-layout__item {
+  padding: 0 6px;
+}
+
+.o-layout--gutter-lg {
+  margin: 0 calc(0 - var(--global-whitespace-lg));
+}
+
+.o-layout--gutter-lg > .o-layout__item {
+  padding: 0 var(--global-whitespace-lg);
+}
+
+.o-layout--gutter-xl {
+  margin: 0 calc(0 - var(--global-whitespace-xxl));
+}
+
+.o-layout--gutter-xl > .o-layout__item {
+  padding: 0 var(--global-whitespace-xxl);
+}
+
+/* reverse horizontal row modifier */
+
+.o-layout--row-reverse {
+  flex-direction: row-reverse;
+}
+
+/* Horizontal alignment modifiers*/
+
+.o-layout--justify-start {
+  justify-content: flex-start;
+}
+
+.o-layout--justify-end {
+  justify-content: flex-end;
+}
+
+.o-layout--justify-center {
+  justify-content: center;
+}
+
+.o-layout--justify-space-around {
+  justify-content: space-around;
+}
+
+.o-layout--justify-space-evenly {
+  justify-content: space-evenly;
+}
+
+.o-layout--justify-space-between {
+  justify-content: space-between;
+}
+
+/* Vertical alignment modifiers */
+
+.o-layout--align-start {
+  align-items: flex-start;
+}
+
+.o-layout--align-end {
+  align-items: flex-end;
+}
+
+.o-layout--align-center {
+  align-items: center;
+}
+
+.o-layout--align-baseline {
+  align-items: baseline;
+}
+
+/* Vertical alignment modifiers that only work if there is one than one flex item */
+
+.o-layout--align-content-start {
+  align-content: start;
+}
+
+.o-layout--align-content-end {
+  align-content: end;
+}
+
+.o-layout--align-content-center {
+  align-content: center;
+}
+
+.o-layout--align-content-space-around {
+  align-content: space-around;
+}
+
+.o-layout--align-content-space-between {
+  align-content: space-between;
+}
+
+/*
+    Objects: List
+    ---
+    Small reusable object to remove default list styling from lists
+*/
+
+.o-list {
+  list-style: none;
+  padding: 0;
+}
+
+/*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+.o-button-reset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+}
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+
+/*
+    Component: Logo
+    ---
+    Website main logo
+*/
+.c-logo {
+  height: var(--global-whitespace-lg);
+  display: flex;
+  justify-content: center;
+}
+
+.c-logo__symbol {
+  display: block;
+  height: 100%;
+}
+
+.c-logo__path--1 {
+  fill: var(--global-color-neutral-xxxx-dark);
+}
+
+.c-logo__path--2 {
+  fill: var(--global-alpha);
+}
+
+.c-logo__path--3 {
+  fill: #1b4186;
+}
+
+/*
+    Component: Card
+    ---
+    Card with box shadow
+*/
+.c-card {
+  background-color: #ffffff;
+  border-radius: 3px;
+  border: 1px solid #0000000d;
+  box-shadow: 0 2px var(--global-whitespace-xs) #00000012;
+}
+
+.c-card__body {
+  padding: var(--global-whitespace-xxl) calc(var(--global-whitespace-xl));
+}
+
+.c-card__title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: var(--global-whitespace-lg);
+  margin: var(--global-whitespace-xxl) 0 0;
+}
+
+.c-card__footer {
+  text-align: center;
+  padding: var(--global-whitespace-lg) 67px;
+  font-size: 14px;
+  color: var(--global-color-neutral-dark);
+  border-top: 1px solid var(--global-color-neutral-xxx-light);
+}
+
+/*
+    Component: Forms
+    ---
+    Everything form related here
+*/
+.form-field--option {
+  display: flex;
+  gap: var(--global-whitespace-sm);
+}
+
+/*
+    Component: Input
+    ---
+    Class to put on all input="text" like form inputs
+*/
+
+.c-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  border: var(--global-border-width) solid var(--global-color-neutral-xxx-light);
+  border-radius: 3px;
+  font-family: inherit;
+  color: inherit;
+  font-size: 16px;
+  line-height: var(--global-whitespace-lg);
+  padding: calc(
+      (
+          var(var(--global-whitespace-xl)) - (var(--global-border-width) * 2) -
+            var(--global-whitespace-lg)
+        ) / 2
+    )
+    var(--global-whitespace-md);
+  outline: none;
+}
+
+.c-input:focus {
+  box-shadow: 0 0 0 3px #3385ff4d;
+  border-color: var(--global-alpha);
+}
+.c-input--option {
+}
+/*
+    Component: Label
+    ---
+    Class to put on all form labels
+*/
+
+.c-label {
+  margin-bottom: var(--global-whitespace-sm);
+  font-size: 14px;
+  line-height: var(--global-whitespace-md);
+  color: var(--global-color-neutral-x-dark);
+}
+
+.c-label--option {
+  margin-bottom: 0;
+}
+
+/* If a input is focused within the form-field class change te color of the label */
+
+.c-form-field:focus-within .c-label {
+  color: var(--global-color-neutral-xxxx-dark);
+}
+
+/*
+    Component: Button
+    ---
+    Class to put on form buttons or links
+*/
+
+.c-button {
+  font-size: 16px;
+  font-weight: 700;
+  border: var(--global-border-width) solid var(--global-alpha-dark);
+  border-radius: 3px;
+  color: #ffffff;
+  background-color: var(--global-alpha);
+  line-height: var(--global-whitespace-lg);
+  padding: calc(
+    (
+        var(var(--global-whitespace-xl)) - (var(--global-border-width) * 2) -
+          var(--global-whitespace-lg)
+      ) / 2
+  );
+  width: 100%;
+}
+
+.c-button:hover {
+  background-color: var(--global-alpha-dark);
+}
+
+.c-button:focus {
+  box-shadow: 0 0 0 3px #3385ff4d;
+}
+
+.c-button:active {
+  background-color: var(--global-alpha-dark);
+}
+
+.c-button--block {
+}
+
+/*------------------------------------*\
+#UTILITIES
+\*------------------------------------*/
+
+/*
+    Utilities: color
+    ---
+    Utility classes to put specific colors onto elements
+*/
+
+.u-color-neutral-base {
+  color: Silver;
+}
+
+.u-color-neutral-dark {
+  color: Black;
+}
+
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+
+.u-pt-clear {
+  padding-top: 0 !important;
+}
+
+.u-mb-clear {
+  margin-bottom: 0 !important;
+}
+
+.u-mb-xs {
+  margin-bottom: var(--global-whitespace-xs) !important;
+}
+
+.u-mb-sm {
+  margin-bottom: var(--global-whitespace-sm) !important;
+}
+
+.u-mb-md {
+  margin-bottom: var(--global-whitespace-md) !important;
+}
+
+.u-mb-lg {
+  margin-bottom: var(--global-whitespace-xl) !important;
+}
+
+.u-mb-xl {
+  margin-bottom: var(--global-whitespace-xxl) !important;
+}
+
+/*
+    Utilities: max-width
+    ---
+    Utility classes to put specific max widths onto elements
+*/
+
+.u-max-width-xs {
+  max-width: 27em !important;
+}
+
+.u-max-width-sm {
+  max-width: 39em !important;
+}
+
+.u-max-width-md {
+  max-width: 50em !important;
+}
+
+.u-max-width-lg {
+  max-width: 63.5em !important;
+}
+
+.u-max-width-none {
+  max-width: none !important;
+}
+
+/*
+    Utilities: align
+    ---
+    Utility classes align text or components
+*/
+
+.u-align-text-center {
+  text-align: center;
+}
+
+.u-align-center {
+  margin: 0 auto;
+}
+
+/*
+    Utilities: text
+    Utility classes to create smaller or bigger test
+*/
+
+.u-text-sm {
+  font-size: 14px;
+}
+
+/*
+    Utility: Widths
+    ---
+    Utility classes to put specific widths onto elements
+    Will be mostly used on o-layout__item
+*/
+
+.u-width-auto {
+  width: auto !important;
+}
+
+.u-1-of-2 {
+  width: 50% !important;
+}
+
+.u-1-of-3 {
+  width: 33.3333333333% !important;
+}
+
+.u-2-of-3 {
+  width: 66.6666666667% !important;
+}
+
+.u-1-of-4 {
+  width: 25% !important;
+}
+
+.u-3-of-4 {
+  width: 75% !important;
+}
+
+.u-1-of-5 {
+  width: 20% !important;
+}
+
+.u-2-of-5 {
+  width: 40% !important;
+}
+
+.u-3-of-5 {
+  width: 60% !important;
+}
+
+.u-4-of-5 {
+  width: 80% !important;
+}
+
+.u-1-of-6 {
+  width: 16.6666666667% !important;
+}
+
+.u-5-of-6 {
+  width: 83.3333333333% !important;
+}
+
+@media (min-width: 576px) {
+  .u-1-of-2-bp1 {
+    width: 50% !important;
+  }
+
+  .u-1-of-3-bp1 {
+    width: 33.3333333333% !important;
+  }
+
+  .u-2-of-3-bp1 {
+    width: 66.6666666667% !important;
+  }
+
+  .u-1-of-4-bp1 {
+    width: 25% !important;
+  }
+
+  .u-3-of-4-bp1 {
+    width: 75% !important;
+  }
+
+  .u-1-of-5-bp1 {
+    width: 20% !important;
+  }
+
+  .u-2-of-5-bp1 {
+    width: 40% !important;
+  }
+
+  .u-3-of-5-bp1 {
+    width: 60% !important;
+  }
+
+  .u-4-of-5-bp1 {
+    width: 80% !important;
+  }
+
+  .u-1-of-6-bp1 {
+    width: 16.6666666667% !important;
+  }
+
+  .u-5-of-6-bp1 {
+    width: 83.3333333333% !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .u-1-of-2-bp2 {
+    width: 50% !important;
+  }
+
+  .u-1-of-3-bp2 {
+    width: 33.3333333333% !important;
+  }
+
+  .u-2-of-3-bp2 {
+    width: 66.6666666667% !important;
+  }
+
+  .u-1-of-4-bp2 {
+    width: 25% !important;
+  }
+
+  .u-3-of-4-bp2 {
+    width: 75% !important;
+  }
+
+  .u-1-of-5-bp2 {
+    width: 20% !important;
+  }
+
+  .u-2-of-5-bp2 {
+    width: 40% !important;
+  }
+
+  .u-3-of-5-bp2 {
+    width: 60% !important;
+  }
+
+  .u-4-of-5-bp2 {
+    width: 80% !important;
+  }
+
+  .u-1-of-6-bp2 {
+    width: 16.6666666667% !important;
+  }
+
+  .u-5-of-6-bp2 {
+    width: 83.3333333333% !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .u-1-of-2-bp3 {
+    width: 50% !important;
+  }
+
+  .u-1-of-3-bp3 {
+    width: 33.3333333333% !important;
+  }
+
+  .u-2-of-3-bp3 {
+    width: 66.6666666667% !important;
+  }
+
+  .u-1-of-4-bp3 {
+    width: 25% !important;
+  }
+
+  .u-3-of-4-bp3 {
+    width: 75% !important;
+  }
+
+  .u-1-of-5-bp3 {
+    width: 20% !important;
+  }
+
+  .u-2-of-5-bp3 {
+    width: 40% !important;
+  }
+
+  .u-3-of-5-bp3 {
+    width: 60% !important;
+  }
+
+  .u-4-of-5-bp3 {
+    width: 80% !important;
+  }
+
+  .u-1-of-6-bp3 {
+    width: 16.6666666667% !important;
+  }
+
+  .u-5-of-6-bp3 {
+    width: 83.3333333333% !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .u-1-of-2-bp4 {
+    width: 50% !important;
+  }
+
+  .u-1-of-3-bp4 {
+    width: 33.3333333333% !important;
+  }
+
+  .u-2-of-3-bp4 {
+    width: 66.6666666667% !important;
+  }
+
+  .u-1-of-4-bp4 {
+    width: 25% !important;
+  }
+
+  .u-3-of-4-bp4 {
+    width: 75% !important;
+  }
+
+  .u-1-of-5-bp4 {
+    width: 20% !important;
+  }
+
+  .u-2-of-5-bp4 {
+    width: 40% !important;
+  }
+
+  .u-3-of-5-bp4 {
+    width: 60% !important;
+  }
+
+  .u-4-of-5-bp4 {
+    width: 80% !important;
+  }
+
+  .u-1-of-6-bp4 {
+    width: 16.6666666667% !important;
+  }
+
+  .u-5-of-6-bp4 {
+    width: 83.3333333333% !important;
+  }
+}
+
+/*------------------------------------*\
+#MEDIA
+\*------------------------------------*/
+
+/*
+    Media Queries
+    ---
+    EXAMPLE Media Queries for Responsive Design.
+    These examples override the primary ('mobile first') styles.
+    USE THEM INLINE!
+*/
+
+/* Extra small devices (portrait phones, less than 576px)
+No media query since this is the default in mobile first design
+*/
+
+/* Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+*/
+
+/* Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+*/
+
+/* Large devices (landscape tablets, desktops, 992px and up)
+@media (min-width: 992px) {}
+*/
+
+/* Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
+*/
+
+/*
+    Print styles.
+    ---
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+*/
+
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster:
+        http://www.sanbeiji.com/archives/953 */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: ' (' attr(href) ')';
+  }
+
+  abbr[title]:after {
+    content: ' (' attr(title) ')';
+  }
+
+  /*
+    * Don't show links that are fragment identifiers,
+    * or use the `javascript:` pseudo protocol
+    */
+  a[href^='#']:after,
+  a[href^='javascript:']:after {
+    content: '';
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: var(--global-border-width) solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+    * Printing Tables:
+    * http://css-discuss.incutio.com/wiki/Printing_Tables
+    */
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
