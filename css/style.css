@@ -1,0 +1,101 @@
+body{
+    width: 100%;
+    height: 100vh;
+    background: white;
+    font-family: 'Inter', sans-serif;
+}
+
+h1{
+    color: black;
+}
+
+:root{
+    --global-baseline: 0.5rem;
+    --global-whitespace: calc(var(--global-baseline) * 3);
+    /* = 24px */
+
+    --global-whitespace-xxs: calc(var(--global-baseline) / 4);
+    /* = 2px */
+    --global-whitespace-xs: calc(var(--global-baseline) / 2);
+    /* = 4px */
+    --global-whitespace-sm: calc(var(--global-baseline) * 1);
+    /*  = 8px */
+    --global-whitespace-md: calc(var(--global-baseline) * 2);
+    /*  = 16px */
+    --global-whitespace-lg: calc(var(--global-baseline) * 4);
+    /*  = 32px */
+    --global-whitespace-xl: calc(var(--global-whitespace) * 2);
+    /*  = 48px */
+    --global-whitespace-xxl: calc(var(--global-whitespace) * 3);
+    /*  = 72px */
+    --global-whitespace-xxxl: calc(var(--global-baseline) * 10);
+    /* = 80px */
+    --global-whitespace-xxxxl: calc(var(--global-whitespace-xxxl) * 3);
+    /* = 240px */
+    --global-height-bar: calc(var(--global-whitespace) - var(--global-whitespace-xxs));
+}
+
+.c-gallery{
+    max-width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: var(--global-whitespace-xl); 
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 320px) {
+    .c-gallery{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (min-width: 990px) {
+    .c-gallery{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .c-gallery{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1440px) {
+    .c-gallery{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.c-info{
+    display: block;
+    text-align: center;
+    background-color: lightslategray;
+    font-size: 30px;
+    padding-bottom: 10px;
+    max-width: 600px;
+}
+
+
+.c-rectangle {
+    height: 25rem;
+    max-width: 25rem;
+    padding: var(--global-whitespace-xs);
+}
+
+.c-image{
+    width: 100%;
+    height: var(--global-whitespace-xxxxl);
+}
+
+
+.c-logo{
+    height: 10rem;
+    width: 10rem;
+    margin-bottom: 24px;
+}
+
