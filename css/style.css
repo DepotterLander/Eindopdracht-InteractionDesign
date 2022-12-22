@@ -36,15 +36,10 @@ h1{
 }
 
 .c-gallery{
-    max-width: 90%;
+    max-width: 100%;
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: var(--global-whitespace-xl); 
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 @media (min-width: 320px) {
@@ -54,18 +49,6 @@ h1{
 }
 
 @media (min-width: 990px) {
-    .c-gallery{
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .c-gallery{
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1440px) {
     .c-gallery{
         grid-template-columns: repeat(2, 1fr);
     }
